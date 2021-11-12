@@ -13,7 +13,7 @@ This enables more PID controllers at the same time. Great stuff when trying to s
 
 You'll find:
 1. PIDClass.py					The PID-object code
-2. MotorSync.py         The main body syncing 2 motors using the accelerometer
-3. MotorSyncUX.py       The main body including the UX for setting the PID parameters interactively
+2. MotorSync.py					The main body syncing 2 motors using the accelerometer
+3. MotorSyncUX.py				The main body including the UX for setting the PID parameters interactively
 
 For further explanation please have a look at the YouTube video here:
