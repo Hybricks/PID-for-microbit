@@ -1,11 +1,9 @@
-# Aangepaste PID controller - werkt! 
-
-# Ivmech PID Controller is simple implementation of a
+# PID Class for BBC microbit by Hybricks 
+# This is an adjusted version of the Ivmech PID Controller. A simple implementation of a
 # Proportional-Integral-Derivative (PID) Controller in the Python Programming Language.
 # More information about PID Controller: http://en.wikipedia.org/wiki/PID_controller
 
 import time
-
 
 class PID:
     def __init__(self, P=0.2, I=0.0, D=0.0):
@@ -15,7 +13,7 @@ class PID:
         self.Kd = D
 
         self.sample_time = 0
-        self.current_time = time.ticks_ms()
+        self.current_time = time.ticks_ms()     #This is the main difference with the original, use of microbit's time lib
         self.last_time = self.current_time
 
         self.clear()
