@@ -12,8 +12,8 @@ The great thing about this implementation is the use of a PID-object, in stead o
 This enables more PID controllers at the same time. Great stuff when trying to sync 4 motors in 1 vehicle ;)
 
 You'll find:
-1. PIDClass.py        The PID-object code
-2. MotorSync.py       The main body syncing 2 motors using the accelerometer
-3. MotorSyncUX.py     The main body including the UX for setting the PID parameters interactively
+1. PIDClass.py					The PID-object code
+2. MotorSync.py         The main body syncing 2 motors using the accelerometer
+3. MotorSyncUX.py       The main body including the UX for setting the PID parameters interactively
 
 For further explanation please have a look at the YouTube video here:
