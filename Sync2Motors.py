@@ -49,12 +49,12 @@ PID_SLV.setPoint = 0    # We aim for the vertical position of the Microbit -> mo
 
 while True:
 
-    THR_MST = POT_IN.read_analog()
-    THR_MST= int(scale(THR_MST, 0, 1024, min_PWM, max_PWM))
+    THR_MST = POT_IN.read_analog()                 # Read the pot meter
+    THR_MST= int(scale(THR_MST, 0, 1024, min_PWM, max_PWM)). # Scale to PWM values
     ESC_MST.write_analog(THR_MST/20000 * 1024)    # Determine the speed of Master motor with potmeter
 
-    x = accelerometer.get_x()
-    PID_SLV.update(x)
-    P_OUT = scale(PID_SLV.output, 1092, -1092, max_PWM, min_PWM) 
-    P_OUT = max(min_PWM, min(P_OUT, max_PWM))
+    x = accelerometer.get_x()                     # Read the angle
+    PID_SLV.update(x)                             # Update the PID object
+    P_OUT = scale(PID_SLV.output, 1092, -1092, max_PWM, min_PWM) # Scale to PWM values
+    P_OUT = max(min_PWM, min(P_OUT, max_PWM))     # Prevent exceeding PWM boundaries
     ESC_SLV.write_analog(P_OUT/20000 * 1024)      # Drive the Slave motor with the outcome of the PID controller
